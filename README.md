@@ -1,40 +1,94 @@
-# parcial-lenguajes
-Parcial 1 – Lenguajes de Programación
+# Parcial 1 – Lenguajes de Programación
 
-Este repositorio contiene la resolución del Parcial 1 de la materia Lenguajes de Programación.
-Cada punto fue implementado en un lenguaje diferente, de acuerdo con lo solicitado en el examen.
+Este repositorio contiene la resolución del **Parcial 1** de la materia **Lenguajes de Programación**.  
+Cada punto fue implementado en un lenguaje diferente, de acuerdo con el enunciado.
 
-Estructura del repositorio
+---
 
-El proyecto está organizado en carpetas según los puntos del parcial:
+## Punto 1 – DFA en Python (abc)
 
-python/ → contiene las soluciones de los puntos 1 y 2, que son autómatas finitos deterministas (DFA) implementados en Python. Dentro están los archivos abc_dfa.py, abd_dfa.py e id_dfa.py.
+Implementación de un autómata finito determinista que reconoce cadenas sobre el alfabeto `{a, b, c}`.
 
-java/ → corresponde al punto 3, donde se implementa una calculadora que calcula la raíz cúbica de números reales. Incluye el archivo AFD.java y un Makefile para compilar y ejecutar.
+**Archivo:**  
+- `abc_dfa.py`
 
-punto4/ → contiene la implementación del algoritmo recursivo de Euclides en dos lenguajes diferentes para comparar rendimiento:
+**Ejecución:**
+```bash
+cd python
+python3 abc_dfa.py
+```
 
-punto4/c/ → implementación en C (paradigma imperativo).
+---
 
-punto4/haskell/ → implementación en Haskell (paradigma declarativo).
+## Punto 2 – DFA en Python (abd, id)
 
-punto5/ → implementación de la serie de Maclaurin para la función exponencial e^x usando ANTLR4 y Java. Contiene los archivos Maclaurin.g4, Eval.java, Main.java y un Makefile para compilar y ejecutar.
+Implementaciones de autómatas finitos deterministas adicionales.
 
-Descripción de cada punto
+**Archivos:**  
+- `abd_dfa.py`  
+- `id_dfa.py`
 
-Puntos 1 y 2 – DFA en Python
-En esta carpeta se encuentran programas que implementan autómatas finitos deterministas con diferentes reglas. Se pueden ejecutar con Python 3.
+**Ejecución:**
+```bash
+cd python
+python3 abd_dfa.py
+python3 id_dfa.py
+```
 
-Punto 3 – Calculadora raíz cúbica en Java
-Se desarrolla un programa que utiliza Flex y Bison en Java para calcular la raíz cúbica de números reales. El programa recibe una cadena de entrada y devuelve el resultado por consola.
+---
 
-Punto 4 – Algoritmo de Euclides
-Aquí se compara el algoritmo recursivo de Euclides entre dos paradigmas:
+## Punto 3 – Calculadora de raíz cúbica en C (Flex + Bison)
 
-Lenguaje imperativo: C.
+Calculadora que obtiene la raíz cúbica de números reales usando **Flex** y **Bison** en **C**.
 
-Lenguaje declarativo: Haskell.
-La comparación permite observar diferencias de rendimiento y estilo de programación.
+**Archivos:**  
+- `calc.l`  
+- `calc.y`  
+- `Makefile`
 
-Punto 5 – Serie de Maclaurin con ANTLR
-Se implementa un analizador con ANTLR4 y Java para calcular los primeros n términos de la serie de Maclaurin para e^x. El usuario debe ingresar el valor de x y el número de términos n, y el programa devuelve la aproximación correspondiente.
+**Ejecución:**
+```bash
+cd punto3
+make run
+```
+
+---
+
+## Punto 4 – Algoritmo de Euclides
+
+Implementación del algoritmo recursivo de Euclides en dos lenguajes diferentes.
+
+**Archivos:**  
+- `euclides.c` (C)  
+- `Euclides.hs` (Haskell)
+
+**Ejecución en C:**
+```bash
+cd punto4/c
+make run
+```
+
+**Ejecución en Haskell:**
+```bash
+cd punto4/haskell
+make run
+```
+
+---
+
+## Punto 5 – Serie de Maclaurin (ANTLR + Java)
+
+Programa que calcula los **n términos** de la serie de Maclaurin para `e^x` usando **ANTLR** y **Java**.
+
+**Archivos:**  
+- `Maclaurin.g4`  
+- `Eval.java`  
+- `Main.java`  
+- `Makefile`
+
+**Ejecución:**
+```bash
+cd punto5
+make run
+echo "ex(x=2.5, n=8)" | make run
+```
